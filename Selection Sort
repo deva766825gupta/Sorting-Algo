@@ -1,0 +1,22 @@
+ public:
+   int select(int arr[], int i, int n)
+    {
+        int minIndex = i;
+        for(int j = i+1;j < n; j++) {
+            if(arr[minIndex] > arr[j])
+                minIndex = j;
+        }
+        
+        return minIndex;
+    }
+
+    void selectionSort(int arr[], int n)
+    {
+        for(int i = 0;i < n-1; i++) {
+            int minIndex = select(arr, i, n);
+            swap(arr[minIndex], arr[i]);
+        }
+    }
+// first iteration we find a minimum element from index 0 to n-1 then swap with arr[0] to min element 
+// second iteration again find min element form index 1 to n-1 again swap with arr[1] to min element .
+till last index 
